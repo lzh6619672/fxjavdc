@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="vboxContent" alignment="CENTER" prefHeight="495.0" prefWidth="386.0" spacing="20.0"
+      xmlns:fx="http://javafx.com/fxml/1"
+       xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="top.keyboard.fxjavdc.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox alignment="TOP_CENTER" prefHeight="21.0" prefWidth="346.0">
+      <children>
+         <Label text="选择视频路径：" />
+         <TextField editable="false" fx:id="inputDir"/>
+         <Button mnemonicParsing="false" text="选择" onAction="#onChoiceInputButtonClick"/>
+      </children>
+   </HBox>
+   <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label text="选择整理路径：" />
+         <TextField editable="false" fx:id="outputDir"/>
+         <Button mnemonicParsing="false" text="选择" onAction="#onChoiceOutputButtonClick"/>
+      </children>
+   </HBox>
+    <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <Label text="是否使用代理：" />
+            <CheckBox fx:id="useProxy" onAction="#onProxyChange"/>
+        </children>
+    </HBox>
+    <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" fx:id="proxyContent" visible="false">
+        <children>
+            <Label text="代理地址：" />
+            <TextField fx:id="proxyHost" />
+        </children>
+    </HBox>
+    <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" visible="false">
+        <children>
+            <Label text="转换日志：" />
+            <TextArea fx:id="logArea" prefHeight="200.0" prefWidth="200.0" />
+        </children>
+    </HBox>
+   <VBox prefHeight="200.0" prefWidth="100.0" />
+
+    <Label fx:id="welcomeText" />
+    <Button onAction="#onHelloButtonClick" text="转换" />
+</VBox>
